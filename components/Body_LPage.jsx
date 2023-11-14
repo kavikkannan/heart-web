@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Body() {
+export default function Bod() {
   return (
     <div className="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
