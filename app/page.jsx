@@ -1,5 +1,5 @@
 import Header_LPage from '@/components/Header_LPage';
- import Body_Lpage from '@/components/Body_Lpage'; 
+import Body_Lpage from '@/components/Body_LPage'; 
 import React from 'react';
 export default function Home() {
   return (
