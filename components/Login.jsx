@@ -21,7 +21,7 @@ export default function Login() {
 
       setLoading(true);
   
-      const log = await fetch(`http://localhost:9000/api/login`, {
+      /* const log = await fetch(`http://localhost:9000/api/login`, {
         method: "POST",
         mode:"cors",
         headers: {
@@ -42,8 +42,8 @@ export default function Login() {
         else{
           setLoading(false);
           alert(response.message)
-        }
-      
+        } */
+      router.push('/main')
 
       
     } catch (error) {
