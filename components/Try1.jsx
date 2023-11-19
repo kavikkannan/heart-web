@@ -4,7 +4,7 @@ import Header from "./Header_LPage";
 export default function Home() {
     const [isChecked, setIsChecked] = useState(false);
     const [isChecked1, setIsChecked1] = useState(false);
-    const [issubmit, setIsSubmit] = useState(true);
+    const [issubmit, setIsSubmit] = useState(false);
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     const [gender, setGender] = useState("");
@@ -156,7 +156,10 @@ export default function Home() {
     <div>
     <Header/>
         <section id='details' className='w-full min-h-screen  '>
-      <div className=" bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 w-full h-screen flex items-center justify-center">
+<div className="absolute  top-[25%]">
+    <img className="" src="/images/heartD.jpg" alt="fhs" />
+</div>
+    <div className="  w-full h-screen flex items-center justify-center">
         <div className="flex flex-no-wrap  justify-start">
         <input type="checkbox" id="toggle" className="sr-only" checked={isChecked} onChange={handleInputChange}/>
           <label htmlFor="toggle" style={{
@@ -406,7 +409,7 @@ export default function Home() {
            
           </label>
           <button  className=" absolute bottom-20 left-[75%] bg-blue-500 hover:bg-blue-700 h-10 text-white font-bold py-2 px-4 rounded-lg" onClick={handelsubmit}> 
-                <a href={issubmit ? '#bp' : ''}>view report</a>
+                view report
             </button>
         </div>
       </div>
@@ -414,14 +417,17 @@ export default function Home() {
       <section id='bp'className='w-full min-h-screen  '>
       <>
       {issubmit ? (
-           <div className="bg-blue-300 min-h-screen flex flex-col items-center justify-center ">
-           
+        
+           <div className=" min-h-screen flex flex-col items-center justify-center ">
+           <div className="absolute right-0">
+    <img className="" src="/images/heartD.jpg" alt="fhs" />
+</div>
            <div className=" flex flex-col items-center space-y-4">
-             {/* Health Values */}
-             <div className="bg-blue-200 p-6 rounded-lg shadow-md w-96">
+            
+             <div className="bg-blue-200 p-1 rounded-lg shadow-md w-96">
                 <h1 className="text-3xl text-black font-serif">Hi {name}, </h1>
                <h2 className="text-2xl text-black font-semibold mb-4">Health Values</h2>
-               <div className="grid grid-cols-2 gap-4">
+               <div className="grid grid-cols-2  gap-x-10">
                    <div >
                      <p className="text-gray-600">Blood Pressure</p>
                      <p className="text-black text-3xl font-bold">{bp1}</p>
@@ -431,7 +437,7 @@ export default function Home() {
                      <p className="text-black text-3xl font-bold">{ch1}</p>
                    </div>
                    <div >
-                     <p className="text-gray-600">Blood su2</p>
+                     <p className="text-gray-600">Blood Sugar</p>
                      <p className="text-black text-3xl font-bold">{su1}</p>
                    </div>
                    <div >
@@ -440,17 +446,19 @@ export default function Home() {
                    </div>
                </div>
              </div>
-             {/* Risk Percentage */}
+           
              <div className="bg-blue-200 p-6 rounded-lg shadow-md w-72 text-center">
                <h2 className="text-black text-2xl font-semibold mb-4">Risk Percentage</h2>
                <p className="text-4xl font-bold text-red-500">{risk}%</p>
              </div>
            </div>
          </div>
-      ) : ( <div className="flex bg-blue-200 justify-center items-center h-screen ">
-      
+      ) : ( <div className="flex justify-center items-center h-screen ">
+      <div className="absolute right-0 ">
+    <img className="" src="/images/heartD.jpg" alt="fhs" />
+</div>
       <div className="text-center">
-        <h1 className="text-black text-3xl font-bold mb-4">Please fill all your details to check your risk level</h1>
+        <h1 className="text-blue-200 text-3xl font-bold mb-4">Please fill all your details to check your risk level</h1>
         {/* Additional content or form inputs can be added here */}
       </div>
     </div> )}
