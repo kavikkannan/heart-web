@@ -437,7 +437,7 @@ export default function Home() {
                      <p className="text-black text-3xl font-bold">{ch1}</p>
                    </div>
                    <div >
-                     <p className="text-gray-600">Blood Sugar</p>
+                     <p className="text-gray-600">Blood sugar</p>
                      <p className="text-black text-3xl font-bold">{su1}</p>
                    </div>
                    <div >

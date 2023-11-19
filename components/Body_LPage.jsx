@@ -22,15 +22,17 @@ export default function Body() {
             <li>Age and gender</li>
           </ul>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 flex-col">
           <p className="text-lg text-black">
             Our advanced machine learning algorithms analyze various health parameters and historical data to assess the risk of heart disease.
             Input your details for a preliminary assessment.
           </p>
-          <Link href='/try' className="mt-6 inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          </div>
+          <div className='flex justify-center'><Link href='/try' className="mt-6 inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             Check Your Risk
-          </Link>
-        </div>
+          </Link></div>
+          
+        
         <div className="mt-16">
           <h3 className="text-3xl font-bold mb-6 text-black">Preventive Measures:</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
