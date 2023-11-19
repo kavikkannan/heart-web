@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React from 'react';
 
 export default function Body() {
@@ -26,9 +27,9 @@ export default function Body() {
             Our advanced machine learning algorithms analyze various health parameters and historical data to assess the risk of heart disease.
             Input your details for a preliminary assessment.
           </p>
-          <button className="mt-6 inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          <Link href='/try' className="mt-6 inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-md text-black bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
             Check Your Risk
-          </button>
+          </Link>
         </div>
         <div className="mt-16">
           <h3 className="text-3xl font-bold mb-6 text-black">Preventive Measures:</h3>

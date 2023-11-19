@@ -12,23 +12,23 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-black sr-only">Your Company</span>
-            <img className=" h-8 w-auto"
-                src="/images/c-logo.png"
+            <img className=" h-8 w-10"
+                src="/images/c.JPG"
                 alt="your company"
             />
           </Link>
     
         </div>
-        <div>CHAARULATHA J (22MID0317)</div>
+        <div>HEART DISEASE PREDICTION</div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="signin" className="text-sm font-semibold leading-6 text-blue-300">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+        <div className="text-sm font-semibold leading-6 text-blue-300">
+        CHAARULATHA J (22MID0317)
+          </div>
         </div>
         <div className="flex lg:hidden">
-        <Link href="signin" className="text-sm font-semibold leading-6 text-blue-300">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+        <div className="text-sm font-semibold leading-6 text-blue-300">
+        CHAARULATHA J (22MID0317)
+          </div>
         </div>
       </nav>
       
