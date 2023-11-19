@@ -11,11 +11,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-black sr-only">Your Company</span>
-            <img className=" h-8 w-10"
-                src="/images/c.JPG"
-                alt="your company"
-            />
+          <h1 className=' font-extrabold font-serif  text-2xl text-blue-300'>C</h1>
           </Link>
     
         </div>
