@@ -107,35 +107,47 @@ export default function Home() {
     }
   }
   function calculateRiskPercentage() {
-    let riskPercentage = 0;
+    
   
     if (bp2 && !ch2 && !su2 && !bmi2) {
-      riskPercentage = 50;
+      setRisk(50);
+      
     } else if (!bp2 && ch2 && !su2 && !bmi2) {
-      riskPercentage = 70;
+      setRisk(70);
+      
     } else if (!bp2 && !ch2 && su2 && !bmi2) {
-      riskPercentage = 30;
+      setRisk(30);
+      
     } else if (!bp2 && !ch2 && !su2 && bmi2) {
-      riskPercentage = 50;
+      setRisk(50);
+      
     } else if (bp2 && ch2 && !su2 && !bmi2) {
-      riskPercentage = 100;
+      setRisk(100);
+      
     } else if (bp2 && !ch2 && su2 && !bmi2) {
-      riskPercentage = 60;
+      setRisk(60);
+      
     } else if (!bp2 && ch2 && su2 && !bmi2) {
-      riskPercentage = 80;
+      setRisk(80);
+     
     } else if (bp2 && ch2 && su2 && !bmi2) {
-      riskPercentage = 100;
+      setRisk(100);
+      
     } else if (ch2 && bp2 && !su2 && bmi2) {
-      riskPercentage = 75;
+      setRisk(75);
+      
     } else if (bp2 && !ch2 && !su2 && bmi2) {
-      riskPercentage = 65;
+      setRisk(65);
+      
     } else if (!bp2 && su2 && bmi && !bmi2) {
-      riskPercentage = 30;
+      setRisk(30);
+      
     } else if (ch2 && bp2 && su2 && bmi2) {
-      riskPercentage = 100;
+      setRisk(100);
+      
     }
   
-    return riskPercentage;
+    
   }
   
 
@@ -144,9 +156,9 @@ export default function Home() {
     setCh1(checkch2Cholesterol());
     setSu1(checksu());
     setBp1(checkBloodPressure());
+    
     if(name !='' && age !='' && gender !='' && height !='' && weight !='' && bp !='' && ch !='' && su !='' ){
-        
-        setRisk(calculateRiskPercentage());
+        calculateRiskPercentage();
         setIsSubmit('true');
     }
     
@@ -330,7 +342,7 @@ export default function Home() {
                 </div>
                 <div  >
                     <label className=" block  text-white text-sm font-medium leading-6 ">
-                        BLOOD su2 LEVEL
+                        BLOOD SUGAR
                     </label>
                     <div className="mb-4">
                         <input
