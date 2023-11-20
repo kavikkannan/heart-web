@@ -26,7 +26,7 @@ export default function Home() {
     const [ch2, setCh2] = useState(false);
     const [su2, setSu2] = useState(false);
     const [bmi2, setBmi2] = useState(false);
-    const [risk, setRisk] = useState(0);
+    const [risk, setRisk] = useState('');
   
     
     
@@ -45,16 +45,20 @@ export default function Home() {
   const BMI = () =>{
     const b= weight/(height*0.01*height*0.01);
     if (b < 18.5) {
+      setBmi2(false);
         return "Underweight";
+        
       } else if (b >= 18.5 && b <= 24.9) {
+        setBmi2(false);
         return "Normal";
       } else if (b >= 25 && b <= 29.9) {
         if (age>45){
-            setBmi2('true');
+            setBmi2(true);
         }
+        setBmi2(false);
         return "Overweight";
       } else {
-        setBmi2('true');
+        setBmi2(true);
         return "Obesity";
         
       }
@@ -62,104 +66,117 @@ export default function Home() {
   }
   function checkch2Cholesterol() {
     if (ch < 100) {
+      setCh2(false);
       return "Optimal";
     } else if (ch >= 100 && ch <= 129) {
+      setCh2(false);
       return "Near Optimal";
     } else if (ch >= 130 && ch <= 159) {
-        setCh2('true');
+        setCh2(true);
       return "Borderline High";
     } else if (ch >= 160 && ch <= 189) {
-        setCh2('true');
+        setCh2(true);
       return "High";
     } else {
-        setCh2('true');
+        setCh2(true);
       return "Very High";
     }
   }
   function checksu() {
     if (su < 100) {
+      setSu2(false);
       return "Normal";
     } else if (su >= 100 && su <= 125) {
+      setSu2(false);
       return "Prediabetes";
     } else {
-        setSu2('true');
+        setSu2(true);
       return "Diabetes";
     }
   }
   
   function checkBloodPressure() {
     if (systolic < 120 && diastolic < 80) {
+      setBp2(false);
       return "Normal";
     } else if (systolic >= 120 && systolic <= 129 && diastolic < 80) {
+      setBp2(false);
       return "Elevated";
     } else if (systolic >= 130 && systolic <= 139 && diastolic >= 80 && diastolic <= 89) {
         if(age>45){
-            setBp2('true');
+            setBp2(true);
         }
+        setBp2(false);
       return "Hypertension Stage 1";
     } else if (systolic >= 140 || diastolic >= 90) {
         if(age<45){
-            setBp2('true');
+            setBp2(true);
         }
+        setBp2(false);
       return "Hypertension Stage 2";
     } else {
+      setBp2(false);
       return "Other";
     }
   }
   function calculateRiskPercentage() {
     
-  
+
     if (bp2 && !ch2 && !su2 && !bmi2) {
-      setRisk(50);
-      
-    } else if (!bp2 && ch2 && !su2 && !bmi2) {
-      setRisk(70);
-      
-    } else if (!bp2 && !ch2 && su2 && !bmi2) {
-      setRisk(30);
-      
-    } else if (!bp2 && !ch2 && !su2 && bmi2) {
-      setRisk(50);
-      
-    } else if (bp2 && ch2 && !su2 && !bmi2) {
-      setRisk(100);
-      
-    } else if (bp2 && !ch2 && su2 && !bmi2) {
-      setRisk(60);
-      
-    } else if (!bp2 && ch2 && su2 && !bmi2) {
-      setRisk(80);
-     
-    } else if (bp2 && ch2 && su2 && !bmi2) {
-      setRisk(100);
-      
-    } else if (ch2 && bp2 && !su2 && bmi2) {
-      setRisk(75);
-      
-    } else if (bp2 && !ch2 && !su2 && bmi2) {
-      setRisk(65);
-      
-    } else if (!bp2 && su2 && bmi && !bmi2) {
-      setRisk(30);
-      
-    } else if (ch2 && bp2 && su2 && bmi2) {
-      setRisk(100);
-      
+        setRisk('50');
     }
-  
-    
-  }
+    if (!bp2 && ch2 && !su2 && !bmi2) {
+        setRisk('70');
+    }
+    if (!bp2 && !ch2 && su2 && !bmi2) {
+        setRisk('30');
+    }
+    if (!bp2 && !ch2 && !su2 && bmi2) {
+        setRisk('50');
+    }
+    if (bp2 && ch2 && !su2 && !bmi2) {
+        setRisk('100');
+    }
+    if (bp2 && !ch2 && su2 && !bmi2) {
+        setRisk('60');
+    }
+    if (!bp2 && ch2 && su2 && !bmi2) {
+        setRisk('80');
+    }
+    if (bp2 && ch2 && su2 && !bmi2) {
+        setRisk('100');
+    }
+    if (ch2 && bp2 && !su2 && bmi2) {
+        setRisk('75');
+    }
+    if (bp2 && !ch2 && !su2 && bmi2) {
+        setRisk('65');
+    }
+    if (!bp2 && su2 && bmi && !bmi2) {
+        setRisk('30');
+    }
+    if (ch2 && bp2 && su2 && bmi2) {
+        setRisk('100');
+    }
+}
+
   
 
   const handelsubmit =()=>{
+    console.log(checkBloodPressure())
     setBmi1(BMI());
     setCh1(checkch2Cholesterol());
     setSu1(checksu());
     setBp1(checkBloodPressure());
-    
+    setRisk('0'); 
+    calculateRiskPercentage();
+    console.log(bp2);
+    console.log(ch2);
+    console.log(su2);
+    console.log(bmi2);
     if(name !='' && age !='' && gender !='' && height !='' && weight !='' && bp !='' && ch !='' && su !='' ){
-        calculateRiskPercentage();
-        setIsSubmit('true');
+      
+        setIsSubmit(true);
     }
     
   };
